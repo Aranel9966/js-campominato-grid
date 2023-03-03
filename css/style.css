@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    text-align: center;
+}
+
+#container-square{
+    
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;
+    grid-template-rows:  30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;
+    
+    justify-content: center
+}
+    
+
+
+.square{
+    border: 1px solid black;
+  
+}
