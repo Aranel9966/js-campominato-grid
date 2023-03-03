@@ -32,34 +32,41 @@ let startBtnEl = document.getElementById('start-btn');
 let containerSquareEl = document.getElementById('container-square');
 
 
-
 startBtnEl.addEventListener('click',function(){
     
+    removeClass()
 
     if(difficultyEL.value == 1){
         for(let i = 1; i <= 100;i++){
 
-            createSquare(containerSquareEl)
+            
+            createSquareAndColor(containerSquareEl,i)
+            containerSquareEl.classList.add('container-square-f')
+            
 
         }
 
     }else if(difficultyEL.value == 2){
         for(let i = 1; i <= 81;i++){
 
-            createSquare(containerSquareEl)
+            createSquareAndColor(containerSquareEl,i)
+            containerSquareEl.classList.add('container-square-n')
+
 
         }
 
     }else{
         for(let i = 1; i <= 49 ;i++){
 
-            createSquare(containerSquareEl)
+            createSquareAndColor(containerSquareEl,i)
+            containerSquareEl.classList.add('container-square-d')
+            
 
         }
 
     }
 
-    // console.log(difficultyEL.value)
+    
 })
 
 
@@ -69,9 +76,25 @@ startBtnEl.addEventListener('click',function(){
 
 //////////function/////////
 
-function createSquare(container){
+function removeClass(){
+    
+    containerSquareEl.innerHTML='';
+    containerSquareEl.classList.remove('container-square-f','container-square-n','container-square-d')
+
+}
+
+
+
+
+//dunction che crea i quadrati
+function createSquareAndColor(container,i){
     let newSquare = document.createElement('div')
     newSquare.classList.add('square')
     container.append(newSquare)
-    return newSquare
+    newSquare.textContent=i
+    
+    newSquare.addEventListener('click',function(){
+        newSquare.classList.add('blue')
+        console.log(i)
+    } )
 }
