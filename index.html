@@ -8,22 +8,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+        <img src="img/Screenshot 2023-03-05 161524.png" alt="">
+        <div class="container">
 
-    <div class="container">
-        <label for="selector">Choose a difficulty:</label>
+            <label for="selector">Difficoltà:</label>
+    
+            <select name="selector" id="difficulty">
+                <option value="1">Facile</option>
+                <option value="2">Normale</option>
+                <option value="3">Difficile</option> 
+            </select>
+    
+            <button id="start-btn">Start</button>
+        </div>
 
-        <select name="selector" id="difficulty">
-            <option value="1">Facile</option>
-            <option value="2">Normale</option>
-            <option value="3">Difficile</option> 
-        </select>
+    </header>
 
-        <button id="start-btn">Start</button>
-    </div>
+    <main>
+    
+        <div id="container-square">
+            <h1>Vuoi giocare...</h1>
+    
+        </div>
+    </main>
+    <footer><p>Made with &hearts; by <a href="#">Angelo</a>  </p></footer>
 
-    <div id="container-square">
-
-    </div>
     
 
     <script src="js/script.js"></script>

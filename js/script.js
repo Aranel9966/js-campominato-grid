@@ -24,7 +24,6 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 ->al clicca di una cassella cambia colore in azzurro 
 ->emette un messaggio in consol del numero
 
-
 */
 
 let difficultyEL = document.getElementById('difficulty');
@@ -32,36 +31,40 @@ let startBtnEl = document.getElementById('start-btn');
 let containerSquareEl = document.getElementById('container-square');
 
 
+
+
 startBtnEl.addEventListener('click',function(){
     
-    removeClass()
+    removeClass();
 
     if(difficultyEL.value == 1){
+
         for(let i = 1; i <= 100;i++){
-
             
-            createSquareAndColor(containerSquareEl,i)
-            containerSquareEl.classList.add('container-square-f')
-            
+            createSquareAndColor(containerSquareEl,i);
 
+            containerSquareEl.classList.add('container-square-f');
+            
         }
 
     }else if(difficultyEL.value == 2){
+
         for(let i = 1; i <= 81;i++){
-
+            
             createSquareAndColor(containerSquareEl,i)
-            containerSquareEl.classList.add('container-square-n')
 
+            containerSquareEl.classList.add('container-square-n')
 
         }
 
     }else{
-        for(let i = 1; i <= 49 ;i++){
 
+        for(let i = 1; i <= 49 ;i++){
+            
             createSquareAndColor(containerSquareEl,i)
+
             containerSquareEl.classList.add('container-square-d')
             
-
         }
 
     }
@@ -71,30 +74,33 @@ startBtnEl.addEventListener('click',function(){
 
 
 
-
-
-
 //////////function/////////
 
 function removeClass(){
     
     containerSquareEl.innerHTML='';
-    containerSquareEl.classList.remove('container-square-f','container-square-n','container-square-d')
 
+    containerSquareEl.classList.remove('container-square-f','container-square-n','container-square-d')
+    
 }
 
 
-
-
-//dunction che crea i quadrati
+//function che crea i quadrati e assegna classColor
 function createSquareAndColor(container,i){
+
     let newSquare = document.createElement('div')
+
     newSquare.classList.add('square')
+
     container.append(newSquare)
+    
     newSquare.textContent=i
     
     newSquare.addEventListener('click',function(){
-        newSquare.classList.add('blue')
+       
+        newSquare.classList.add('green')
+        
         console.log(i)
+
     } )
 }
